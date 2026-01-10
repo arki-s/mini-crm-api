@@ -56,7 +56,7 @@ a real production setup.
 
 ## Tech Stack
 
-- Python
+- Python 3.12+
 - Django
 - Django REST Framework
 - JWT (djangorestframework-simplejwt)
