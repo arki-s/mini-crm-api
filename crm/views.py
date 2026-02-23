@@ -29,7 +29,7 @@ class DealRetrieveUpdateView(generics.RetrieveUpdateAPIView):
 
 
 # Activities
-class ActivityListCreateView(generics.ListCreateAPIView):
+class DealActivityListCreateView(generics.ListCreateAPIView):
     serializer_class = ActivitySerializer
 
     def get_deal(self) -> Deal:
