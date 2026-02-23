@@ -3,7 +3,7 @@ from rest_framework import serializers
 from .models import Activity, Deal
 
 
-class DealSerialier(serializers.ModelSerializer):
+class DealSerializer(serializers.ModelSerializer):
     class Meta:
         model = Deal
         fields = [
