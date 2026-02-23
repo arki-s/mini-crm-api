@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Deal, Activity
+
+from .models import Activity, Deal
 
 
 class DealSerialier(serializers.ModelSerializer):
@@ -16,6 +17,7 @@ class DealSerialier(serializers.ModelSerializer):
         ]
         read_only_fields = ["id", "created_at", "updated_at"]
 
+
 class ActivitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Activity
@@ -30,8 +32,10 @@ class ActivitySerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ["id", "created_at", "updated_at"]
 
+
 class ActivityCreateSerializer(serializers.ModelSerializer):
     """/deals/{id}/activities の POST 用（dealはURLから決める）"""
+
     class Meta:
         model = Activity
         fields = ["date", "activity_type", "memo"]

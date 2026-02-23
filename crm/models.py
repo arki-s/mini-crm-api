@@ -3,7 +3,7 @@ from django.db import models
 
 class Deal(models.Model):
     class Status(models.TextChoices):
-        NEW ="new", "新規"
+        NEW = "new", "新規"
         CONTACTED = "contacted", "連絡済み"
         PROPOSED = "proposed", "提案中"
         WON = "won", "獲得"
@@ -29,7 +29,7 @@ class Activity(models.Model):
         MEETING = "meeting", "ミーティング"
 
     activity_type = models.CharField(max_length=20, choices=ActivityType.choices)
-    deal = models.ForeignKey(Deal, related_name='activities', on_delete=models.CASCADE)
+    deal = models.ForeignKey(Deal, related_name="activities", on_delete=models.CASCADE)
     date = models.DateField()
     memo = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
